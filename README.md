@@ -32,17 +32,17 @@ FeLV transmission is then simulated on FIV-based networks and three alternative 
 1. **LHS_design.R:** Latin hypercube sampling to generate simulation parameter sets
     1. "LHS parameter sets.Rdata": Actual parameter sets which can be used to reproduce simulations (required by all simulation scripts)
 2. **FIV_full_sims.R:** main simulation script for FIV-based model. Calls external functions:
-    1. *simulate_ergm.R:* simulates network based on FIV ERGM and population characteristics. Calls data:
+    1. ***simulate_ergm.R:*** simulates network based on FIV ERGM and population characteristics. Calls data:
         1. "Attribute Data/FeLV Period telemetry_deid.Rdata": de-identified telemetry data from the period of the empirical FeLV outbreak.
         2. "Phyloscanner_networks/FL FIV_bestERGM.Rdata": best FIV ERGM from exponential random graph modeling.
-    2. *trans_sim.R:* simulations FeLV transmission on network
-    3. *post_process_outbreak_data.R:* processes simulation results to account for re-spawning process
-    4. *props affected_births included.R:* processes simulation data to provide proportions of population in each disease category for plotting purposes
-    5. *extract_results.R:* extracts simulation results of interest
+    2. ***trans_sim.R:*** simulations FeLV transmission on network
+    3. ***post_process_outbreak_data.R:*** processes simulation results to account for re-spawning process
+    4. ***props affected_births included.R:*** processes simulation data to provide proportions of population in each disease category for plotting purposes
+    5. ***extract_results.R:*** extracts simulation results of interest
 3. **Rand_full_sims.R:** main simulation script for random network model. Calls functions b-d from FIV above, as well as:
-    1. *simulate_randnet.R:* simulates random network
+    1. ***simulate_randnet.R:*** simulates random network
 4. **SO_full_sims.R:** main simulation script for overlap-based network model. Calls functions b-d from FIV above, as well as:
-    1. *simulate_SOnet.R:* simulates overlap based network. Requires:
+    1. ***simulate_SOnet.R:*** simulates overlap based network. Requires:
         1. "SO network sims_nbinom params.Rdata": negative binomial distribution parameters describing average degree distribution for panther spatial overlap networks during the FeLV period.
 5. **FeLV_homogmix.R:** main simulation script for homogeneous mixing model (Gillespie algorithm)
 
