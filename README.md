@@ -30,20 +30,20 @@ Scripts and associate data for exponential random graph modeling follow the foll
 ## 3. FeLV transmission simulation
 FeLV transmission is then simulated on FIV-based networks and three alternative models: random networks, spatial overlap-based (SO) networks, and homogeneous mixing. Main simulation scripts call additional external functions as follows (scripts can be found in "R Scripts" folder):
 1. **LHS_design.R:** Latin hypercube sampling to generate simulation parameter sets
-  a. "LHS parameter sets.Rdata": Actual parameter sets which can be used to reproduce simulations (required by all simulation scripts)
+    1. "LHS parameter sets.Rdata": Actual parameter sets which can be used to reproduce simulations (required by all simulation scripts)
 2. **FIV_full_sims.R:** main simulation script for FIV-based model. Calls external functions:
-  a. *simulate_ergm.R:* simulates network based on FIV ERGM and population characteristics. Calls data:
-    i. "Attribute Data/FeLV Period telemetry_deid.Rdata": de-identified telemetry data from the period of the empirical FeLV outbreak.
-    ii. "Phyloscanner_networks/FL FIV_bestERGM.Rdata": best FIV ERGM from exponential random graph modeling.
-  b. *trans_sim.R:* simulations FeLV transmission on network
-  c. *post_process_outbreak_data.R:* processes simulation results to account for re-spawning process
-  d. *props affected_births included.R:* processes simulation data to provide proportions of population in each disease category for plotting purposes
-  e. *extract_results.R:* extracts simulation results of interest
+    1. *simulate_ergm.R:* simulates network based on FIV ERGM and population characteristics. Calls data:
+        1. "Attribute Data/FeLV Period telemetry_deid.Rdata": de-identified telemetry data from the period of the empirical FeLV outbreak.
+        2. "Phyloscanner_networks/FL FIV_bestERGM.Rdata": best FIV ERGM from exponential random graph modeling.
+    2. *trans_sim.R:* simulations FeLV transmission on network
+    3. *post_process_outbreak_data.R:* processes simulation results to account for re-spawning process
+    4. *props affected_births included.R:* processes simulation data to provide proportions of population in each disease category for plotting purposes
+    5. *extract_results.R:* extracts simulation results of interest
 3. **Rand_full_sims.R:** main simulation script for random network model. Calls functions b-d from FIV above, as well as:
-  a. *simulate_randnet.R:* simulates random network
+    1. *simulate_randnet.R:* simulates random network
 4. **SO_full_sims.R:** main simulation script for overlap-based network model. Calls functions b-d from FIV above, as well as:
-  a. *simulate_SOnet.R:* simulates overlap based network. Requires:
-    i. "SO network sims_nbinom params.Rdata": negative binomial distribution parameters describing average degree distribution for panther spatial overlap networks during the FeLV period.
+    1. *simulate_SOnet.R:* simulates overlap based network. Requires:
+        1. "SO network sims_nbinom params.Rdata": negative binomial distribution parameters describing average degree distribution for panther spatial overlap networks during the FeLV period.
 5. **FeLV_homogmix.R:** main simulation script for homogeneous mixing model (Gillespie algorithm)
 
 
@@ -53,9 +53,3 @@ Simulation results across all model types are then analyzed using the following 
 2. **SatScan_sims.R:** preps simulation data for SaTScan analysis, then extracts, processes, and plots results. Note: requires external running of [SaTScan](https://www.satscan.org/).
 3. **CuzEd_sims.R:** runs Cuzick-Edwards test for spatial clustering with simulation data. 
 4. **RF_cbeta_figure.R:** runs random forest analysis to generate supplementary Figure S10.
-
-1. Item 3
-   1. Item 3a
-   
-3. Third item
-    1. Indented item
