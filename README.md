@@ -18,34 +18,26 @@ Phyloscanner analysis parameters are provided in "Phyloscanner_networks/Phylosca
 ## 2. Exponential random graph modeling
 Scripts and associate data for exponential random graph modeling follow the following pipeline steps (scripts can be found in "R Scripts" folder):
 1. **Phyloscanner_to_network.R:** converts Phyloscanner output to network object. Uses:
-  1. "Phyloscanner_networks/FL FIV_hostRelationshipSummary.csv"
+    1. "Phyloscanner_networks/FL FIV_hostRelationshipSummary.csv"
 2. **UnwUndERGMs.R:** Exponential random graph modeling of FIV transmission network. Requires the following data:
-  1. "Attribute Data/FL FIV covariates.Rdata"
-  2. "Attribute Data/FL FIV_panther relatedness.Rdata"
-  3. "Attribute Data/FL FIV pairwise dists_logkm.Rdata"
-  4. "Attribute Data/FL FIV pairwise overlap_UDOI.Rdata"
-  5. "Phyloscanner_networks/FL FIV transmission network.Rdata": Phyloscanner transmission network output from Phyloscanner_to_network.R
+    1. "Attribute Data/FL FIV covariates.Rdata"
+    2. "Attribute Data/FL FIV_panther relatedness.Rdata"
+    3. "Attribute Data/FL FIV pairwise dists_logkm.Rdata"
+    4. "Attribute Data/FL FIV pairwise overlap_UDOI.Rdata"
+    5. "Phyloscanner_networks/FL FIV transmission network.Rdata": Phyloscanner transmission network output from Phyloscanner_to_network.R
 
 
 ## 3. FeLV transmission simulation
 FeLV transmission is then simulated on FIV-based networks and three alternative models: random networks, spatial overlap-based (SO) networks, and homogeneous mixing. Main simulation scripts call additional external functions as follows (scripts can be found in "R Scripts" folder):
 1. **LHS_design.R:** Latin hypercube sampling to generate simulation parameter sets
-  
   a. "LHS parameter sets.Rdata": Actual parameter sets which can be used to reproduce simulations (required by all simulation scripts)
 2. **FIV_full_sims.R:** main simulation script for FIV-based model. Calls external functions:
-  
   a. *simulate_ergm.R:* simulates network based on FIV ERGM and population characteristics. Calls data:
-    
     i. "Attribute Data/FeLV Period telemetry_deid.Rdata": de-identified telemetry data from the period of the empirical FeLV outbreak.
-    
     ii. "Phyloscanner_networks/FL FIV_bestERGM.Rdata": best FIV ERGM from exponential random graph modeling.
-  
   b. *trans_sim.R:* simulations FeLV transmission on network
-  
   c. *post_process_outbreak_data.R:* processes simulation results to account for re-spawning process
-  
   d. *props affected_births included.R:* processes simulation data to provide proportions of population in each disease category for plotting purposes
-  
   e. *extract_results.R:* extracts simulation results of interest
 3. **Rand_full_sims.R:** main simulation script for random network model. Calls functions b-d from FIV above, as well as:
   a. *simulate_randnet.R:* simulates random network
@@ -64,3 +56,6 @@ Simulation results across all model types are then analyzed using the following 
 
 1. Item 3
    1. Item 3a
+   
+3. Third item
+    1. Indented item
