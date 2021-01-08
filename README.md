@@ -18,13 +18,13 @@ Phyloscanner analysis parameters are provided in "Phyloscanner_networks/Phylosca
 ## 2. Exponential random graph modeling
 Scripts and associate data for exponential random graph modeling follow the following pipeline steps (scripts can be found in "R Scripts" folder):
 1. **Phyloscanner_to_network.R:** converts Phyloscanner output to network object. Uses:
-  a. "Phyloscanner_networks/FL FIV_hostRelationshipSummary.csv"
+    a. "Phyloscanner_networks/FL FIV_hostRelationshipSummary.csv"
 2. **UnwUndERGMs.R:** Exponential random graph modeling of FIV transmission network. Requires the following data:
-  a. "Attribute Data/FL FIV covariates.Rdata"
-  b. "Attribute Data/FL FIV_panther relatedness.Rdata"
-  c. "Attribute Data/FL FIV pairwise dists_logkm.Rdata"
-  d. "Attribute Data/FL FIV pairwise overlap_UDOI.Rdata"
-  e. "Phyloscanner_networks/FL FIV transmission network.Rdata": Phyloscanner transmission network output from Phyloscanner_to_network.R
+    a. "Attribute Data/FL FIV covariates.Rdata"
+    b. "Attribute Data/FL FIV_panther relatedness.Rdata"
+    c. "Attribute Data/FL FIV pairwise dists_logkm.Rdata"
+    d. "Attribute Data/FL FIV pairwise overlap_UDOI.Rdata"
+    e. "Phyloscanner_networks/FL FIV transmission network.Rdata": Phyloscanner transmission network output from Phyloscanner_to_network.R
 
 
 ## 3. FeLV transmission simulation
@@ -54,4 +54,3 @@ Simulation results across all model types are then analyzed using the following 
 3. **CuzEd_sims.R:** runs Cuzick-Edwards test for spatial clustering with simulation data. 
 4. **RF_cbeta_figure.R:** runs random forest analysis to generate supplementary Figure S10.
 
-    
