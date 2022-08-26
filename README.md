@@ -1,6 +1,8 @@
 # FIV_FeLV_Transmission
 
-This repository features code and data used in the manuscript "Transmission of one predicts another: Apathogenic proxies for transmission dynamics of a fatal virus"
+This repository features code and data used in the manuscript "Apathogenic proxies for transmission dynamics of a fatal virus"
+
+The code is archived with Zenodo: [![DOI](https://zenodo.org/badge/325627386.svg)](https://zenodo.org/badge/latestdoi/325627386)
 
 The analysis pipeline follows the following steps:
 1. Phyloscanner analysis of FIV genomes
